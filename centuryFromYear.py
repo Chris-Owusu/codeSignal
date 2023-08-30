@@ -6,7 +6,7 @@ def solution(year):
     elif 101 <= year <= 200:
         return 2
     else:
-        return (year - 1) // 100 + 1
+        return (year) // 100
 
 
 print(solution(1905))
