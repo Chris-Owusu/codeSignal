@@ -1,3 +1,7 @@
+# Write a function that takes a string as input and returns the string with only the vowels reversed.
+
+
+
 def solution(s):
     vowels = "aAeEiIoOuU"
     
