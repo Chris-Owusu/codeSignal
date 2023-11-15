@@ -1,7 +1,20 @@
 def solution(inputString):
-    translation_table = str.maketrans("", "", "()")
-    inputString.translate(translation_table)
-    return inputString[::-1]
+    stack = []
+    result = []
+    
+    for char in inputString:
+        if char == '(':
+            stack.append(result)
+            result = []
+        elif char == ')':
+            result = stack.pop() + list(reversed(result))
+        else:
+            result.append(char)
+    
+    return ''.join(result)
 
-inputString = "(bar)"
-print(solution(inputString))
+
+print(solution("(bar)")) 
+print(solution("foo(bar)baz"))  
+print(solution("foo(bar)baz(blim)"))
+print(solution("foo(bar(baz))blim"))
